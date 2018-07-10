@@ -9,16 +9,18 @@ package LabExercise2;
  *
  * @author Francis Derit
  */
-import java.io.* ;
-import java.lang.*;
-
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 public class deritFTLabExer210 {
-    public static void main(String[] args) {    
-        double[] data = {5.6, 6.2, 6.0, 5.5, 5.7, 6.1, 7.4, 5.5, 5.5, 6.3, 6.4, 4.0, 6.9};
-        double sum = 0, ave, farthest = 0, temp;
-        boolean counter = true;
-        for(int i = 0; i < data.length; i++)
-            System.out.println("Data[ " + i + " ] = " + data[i]);
+    public static void main(String[] args) throws IOException { 
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        double[] data = new double[13];                    
+        double sum = 0, ave, farthest = 0;
+        for(int i = 0; i < data.length; i++){
+            System.out.print("Data[ " + i + " ] = ");
+            data[i] = Double.parseDouble(input.readLine());
+        }
         //Sum and average of values
         for(int i = 0; i < data.length; i++)
             sum += data[i];
