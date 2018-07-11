@@ -11,42 +11,13 @@ package LabExercise2;
  */
 import java.io.* ;
 
-public class deritFTLabExer218 {
-    public static void main(String[] args) {    
-        int[][] image = {{0,0,0,0,0,0,0,0,0,0,0,0},
-                         {0,0,0,0,0,0,0,0,0,0,0,0},
-                         {0,0,5,5,5,5,5,5,5,5,0,0},
-                         {0,0,5,5,5,5,5,5,5,5,0,0},
-                         {0,0,5,5,5,5,5,5,5,5,0,0},
-                         {0,0,5,5,5,5,5,5,5,5,0,0},
-                         {0,0,5,5,5,5,5,5,5,5,0,0},
-                         {0,0,5,5,5,5,5,5,5,5,0,0},
-                         {0,0,5,5,5,5,5,5,5,5,0,0},
-                         {0,0,5,5,5,5,5,5,5,5,0,0},
-                         {0,0,0,0,0,0,0,0,0,0,0,0},
-                         {0,0,0,0,0,0,0,0,0,0,0,0}};
-        
-        int[][] smooth = new int[ image.length ][ image[0].length ];
-        for ( int row=0; row<image.length; row++ ){
-            for ( int col=0; col<image[row].length; col++ ){
-                System.out.print(image[row][col]);
+public class deritFTLabExer218{
+    public static void main(String[] args) {  
+ 
+        for (int i = 0, out = 0; i < 64; i++, out = (i / 8) * 8){
+            for (int j = 0; j < 64; j++){
+                System.out.println(out);
             }
-            System.out.println("");
-        }
-        System.out.println("");
-        int ave;
-        for ( int r=0; r<image.length; r++ ){
-            for ( int c=0; c<image[r].length; c++ ){
-                if(r >=1 && r <= image.length-2 && c >= 1 && c <= image.length-2){
-                    ave = (image[r-1][c-1]+image[r-1][c ]+image[r-1][c+1]+image[r ][c-1]+image[r ][c ]+
-                          image[r ][c+1]+image[r+1][c-1]+image[r+1][c ]+ image[r+1][c+1])/9;
-                    smooth[r][c] = ave;
-                    System.out.print(smooth[r][c]);          
-                }
-                else
-                    System.out.print(image[r][c]);
-            }
-            System.out.println("");
         }
     }
 }
